@@ -1,6 +1,7 @@
 .imagenDeMenu{
 width: 80px;
 height: 70px;
+
 }
 
 .hero-text {
@@ -11,3 +12,8 @@ height: 70px;
     transform: translate(-50%, -50%);
     color: #100000;
     }
+    li{
+        text-align: center;
+    }
+    
+
