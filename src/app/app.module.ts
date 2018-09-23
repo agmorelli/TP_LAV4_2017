@@ -7,6 +7,7 @@ import { ListadoDeResultadosComponent } from './componentes/listado-de-resultado
 import { LoginComponent } from './componentes/login/login.component';
 //  import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { HttpModule } from '@angular/http';
+import {ButtonModule} from 'primeng/button';
 
 // import { AccordionModule } from 'ngx-bootstrap';
 // agrego las clases para utilizar ruteo
@@ -25,6 +26,8 @@ import { AdivinaMasListadoComponent } from './componentes/adivina-mas-listado/ad
 import { AgilidadMasListadoComponent } from './componentes/agilidad-mas-listado/agilidad-mas-listado.component';
 import { RuteandoModule } from './ruteando/ruteando.module';
 import { ListadoComponent } from './componentes/listado/listado.component';
+import { BuscaMinasComponent } from './componentes/busca-minas/busca-minas.component';
+
 // declaro donde quiero que se dirija
 /*
 const MiRuteo = [{path: 'error' , component: ErrorComponent},
@@ -53,6 +56,10 @@ import { MapaDeGoogleComponent } from './componentes/mapa-de-google/mapa-de-goog
 import { AgmCoreModule } from '@agm/core';
 import { InputJugadoresComponent } from './componentes/input-jugadores/input-jugadores.component';
 import { SexoPipe } from './pipes/sexo.pipe';
+import { PptComponent } from './componentes/ppt/ppt.component';
+import { TatetiComponent } from './componentes/tateti/tateti.component';
+
+
 
 @NgModule({
   declarations: [
@@ -78,7 +85,11 @@ import { SexoPipe } from './pipes/sexo.pipe';
     MapaDeGoogleComponent,
     JugadoresListadoComponent,
     InputJugadoresComponent,
-    SexoPipe
+    SexoPipe,
+    BuscaMinasComponent,
+    PptComponent,
+    TatetiComponent
+    
   ],
   imports: [
     BrowserModule,

@@ -9,9 +9,12 @@ import { JuegoServiceService } from '../../servicios/juego-service.service';
 export class ListadoComponent implements OnInit {
   public listadoParaCompartir: Array<any>;
    miServicioJuego:JuegoServiceService
+   public tengoSaludo:string;
+
 
   constructor(servicioJuego:JuegoServiceService) {
     this.miServicioJuego = servicioJuego;
+    this.tengoSaludo="hola mundo";
     
   }
   
