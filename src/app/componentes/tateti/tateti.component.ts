@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+
+import { Component, OnInit ,Input,Output,EventEmitter} from '@angular/core';
+import { Tateti } from '../../clases/tateti';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-tateti',
@@ -7,9 +10,58 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TatetiComponent implements OnInit {
 
-  constructor() { }
+  miJuego:Tateti;
+  valorUsuario:string;
+  turno:string;
+
+  constructor() {
+    this.miJuego=new Tateti("jug");
+   let r= Math.round(Math.random()); 
+   if(r==0){
+     this.turno="pc";
+this.JugadaPc();   
+   }else{
+     this.turno="jugador";
+   }
+   console.log(r);
+    
+   }
 
   ngOnInit() {
+    
+   
+    
   }
+
+  MarcarCasilla(x,y, valor){
+
+    if(this.miJuego.MarcarCasilla(x,y,valor))
+    {
+      if(this.turno=="jugador"){
+        this.turno="pc";
+      }
+      else{
+        this.turno="jugador";
+      }
+      this.JugadaPc();
+      
+    }
+    
+    console.log(this.miJuego.tablero[x][y]);
+  }
+
+  JugadaPc(){
+    do{
+      let x= Math.round(Math.random() * (2 - 0)) + 0;
+      let y= Math.round(Math.random() * (2 - 0)) + 0;
+      console.log(x,y)
+     if(this.miJuego.MarcarCasilla(x,y,this.turno))
+     {
+       this.turno="jugador";
+     }
+    }while(this.turno=="pc");
+
+  }
+
 
 }

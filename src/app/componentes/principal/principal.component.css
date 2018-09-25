@@ -1,3 +1,11 @@
+
+body 
+{
+    background-color: #51a2e4;
+    background-image: url("/assets/imagenes/fondo.gif");  
+    margin-bottom: 0%; 
+}
+
 .imagenDeMenu{
 width: 80px;
 height: 70px;
@@ -14,6 +22,9 @@ height: 70px;
     }
     li{
         text-align: center;
+        background-color:rgb(203, 255, 196);
     }
+
+
     
 
