@@ -13,6 +13,7 @@ export class TatetiComponent implements OnInit {
   miJuego:Tateti;
   valorUsuario:string;
   turno:string;
+  
 
   constructor() {
     this.miJuego=new Tateti("jug");
@@ -54,14 +55,26 @@ this.JugadaPc();
     do{
       let x= Math.round(Math.random() * (2 - 0)) + 0;
       let y= Math.round(Math.random() * (2 - 0)) + 0;
-      console.log(x,y)
-     if(this.miJuego.MarcarCasilla(x,y,this.turno))
-     {
-       this.turno="jugador";
-     }
+     
+      if(this.miJuego.HayLugar())
+      {
+        if(this.miJuego.MarcarCasilla(x,y,this.turno))
+        {
+          this.turno="jugador";
+          console.log(x,y," entro en el if, turno: ",this.turno);
+        }
+
+      }
+      if(this.miJuego.gano){
+        this.turno="jugador";
+      }
+
+     //console.log(x,y, " no entro en el if, turno: ",this.turno);
     }while(this.turno=="pc");
 
   }
+
+
 
 
 }

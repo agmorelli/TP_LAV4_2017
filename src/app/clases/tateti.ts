@@ -29,18 +29,22 @@ constructor(jugador:string){
 
 public MarcarCasilla(x,y,valor)
 {
-    
-      if( this.tablero[x][y].MarcarCasilla(valor))
-      { 
+    if(this.HayLugar() && !this.gano)
+    {
+        if( this.tablero[x][y].MarcarCasilla(valor))
+        { 
+  
+          if(this.verificar())
+          {
+              this.TerminarJuego();
+              return false;
+              
+          }
+          return true;
+      }
 
-        if(this.verificar())
-        {
-            this.TerminarJuego();
-            return false;
-            
-        }
-        return true;
     }
+
 }
 
     public verificar():boolean{
@@ -49,12 +53,15 @@ public MarcarCasilla(x,y,valor)
                     this.tablero[0][0].valor == this.tablero[1][1].valor && this.tablero[1][1].valor == this.tablero[2][2].valor)
                 {
                     console.log("tatei");
+                   
+                    this.gano=true;
                     return true;
                 }
                 if(this.tablero[0][2].valor == this.tablero[1][1].valor && this.tablero[1][1].valor == this.tablero[2][0].valor &&
                     this.tablero[0][2].valor != "" && this.tablero[1][1].valor != "" && this.tablero[2][0].valor != "")
                 {
                     console.log("tatei");
+                    this.gano=true;
                     return true;
                 }
 //////////////////////////////////////HORIZONTALES/////////////////////////////////////////////////////////
@@ -62,6 +69,7 @@ public MarcarCasilla(x,y,valor)
                     this.tablero[0][0].valor == this.tablero[0][1].valor && this.tablero[0][1].valor == this.tablero[0][2].valor)
                 {
                     console.log("tatei");
+                    this.gano=true;
                     return true;
                 }
 
@@ -69,12 +77,14 @@ public MarcarCasilla(x,y,valor)
                     this.tablero[1][0].valor == this.tablero[1][1].valor && this.tablero[1][1].valor == this.tablero[1][2].valor)
                 {
                     console.log("tatei");
+                    this.gano=true;
                     return true;
                 }
                 if(this.tablero[2][0].valor != "" && this.tablero[2][1].valor != "" && this.tablero[2][2].valor != "" &&
                     this.tablero[2][0].valor == this.tablero[2][1].valor && this.tablero[2][1].valor == this.tablero[2][2].valor)
                 {
                     console.log("tatei");
+                    this.gano=true;
                     return true;
                 }
  ////////////////////////////////////////////VERTICALES///////////////////////////////////////////////////
@@ -82,18 +92,21 @@ public MarcarCasilla(x,y,valor)
                     this.tablero[0][0].valor == this.tablero[1][0].valor && this.tablero[1][0].valor == this.tablero[2][0].valor)
                 {
                     console.log("tatei");
+                    this.gano=true;
                     return true;
                 }
                 if(this.tablero[0][1].valor != "" && this.tablero[1][1].valor != "" && this.tablero[2][1].valor != "" &&
                     this.tablero[0][1].valor == this.tablero[1][1].valor && this.tablero[1][1].valor == this.tablero[2][1].valor)
                 {
                     console.log("tatei");
+                    this.gano=true;
                     return true;
                 }
                 if(this.tablero[0][2].valor != "" && this.tablero[1][2].valor != "" && this.tablero[2][2].valor != "" &&
                     this.tablero[0][2].valor == this.tablero[1][2].valor && this.tablero[1][2].valor == this.tablero[2][2].valor)
                 {
                     console.log("tatei");
+                    this.gano=true;
                     return true;
                 }
 console.log("nada");
@@ -105,6 +118,20 @@ console.log("nada");
     TerminarJuego(){
         this.gano=true;
         
+    }
+
+    HayLugar()
+    {
+        for(let i=0; i<3; i++)
+        {
+            for(let j=0; j<3; j++)
+            {
+                if(!this.tablero[i][j].marcada){
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
 }
