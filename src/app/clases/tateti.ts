@@ -38,13 +38,16 @@ public MarcarCasilla(x,y,valor)
           if(this.verificar())
           {
               this.TerminarJuego();
+              console.log(this.gano);
               return false;
               
           }
+         
           return true;
       }
 
     }
+
 
 }
 

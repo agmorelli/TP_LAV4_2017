@@ -53,9 +53,14 @@ export class TatetiComponent implements OnInit {
         console.log("ganaste");
       }
 
-      if(!this.miJuego.gano)
+      if(!this.miJuego.gano && this.miJuego.HayLugar())
       {
         this.JugadaPc();
+      }
+      if(!this.miJuego.gano && !this.miJuego.HayLugar())
+      {
+        this.ganador="empate";
+        console.log("empateee");
       }
       
     
@@ -92,6 +97,7 @@ export class TatetiComponent implements OnInit {
 
   ReiniciarJuego()
   {
+    this.ganador="";
     this.miJuego=new Tateti("jug");
     let r= Math.round(Math.random()); 
  

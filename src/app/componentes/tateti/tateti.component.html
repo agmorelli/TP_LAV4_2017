@@ -1,7 +1,9 @@
-<div class="container">
+<div class="container" style="background-color: cornflowerblue">
   <h1> Ta-Te-Ti </h1> 
+
+  <button class="btn btn-jugar" (click)="ReiniciarJuego()">Jugar de nuevo</button>
   <div class="juego">
-                  <button (click)="ReiniciarJuego()">Jugar de nuevo</button>
+                
   <div class="tablero">
 
     <tr *ngFor="let filas of miJuego.tablero">
@@ -17,4 +19,11 @@
                     <img class="imgInfo" *ngIf="this.turno=='pc'" src="../../../assets/imagenes/bobBaila.png" >
 </div>
 </div>
+
+<div class="msjFinal"> 
+    <h1 *ngIf="this.ganador=='jugador'">  Ganaste !!!</h1>
+    <h1 *ngIf="this.ganador=='pc'">  Perdiste =(</h1>
+    </div>
+
+
 </div>
