@@ -102,7 +102,7 @@
   from {bottom: 30px; opacity: 1;}
   to {bottom: 0; opacity: 0;}
 }
-.pizarron{
+.opContainer{
   background-color: rgba(0, 0, 0, 0.788);
   border: solid 20px;
   border-color: rgb(182, 85, 5);
