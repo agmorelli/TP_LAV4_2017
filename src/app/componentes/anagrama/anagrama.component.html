@@ -1,12 +1,29 @@
-<div class="container">
+<div class="fondo"> 
+<div class="container body">
   
   <h1 class="titulo">  Anagrama </h1>
 
-  <div class="letras"><h1 *ngFor="let letra of miJuego.arrayDeLetras"> {{letra}}</h1> </div>
-  <input [(ngModel)]="ingresoUsuario" type="text" placeholder="Ingrese la palabra">
+  <button class="btn btnEmpieza col-sm-6" (click)="IniciarJuego()"> Iniciar Juego </button>
+  <br>  
+  <br>  
+
+  <div  class="row container-letras justify-content-md-center">
+
+    <div *ngIf="empezo" class="conteinerLetras row"> 
+
+    <h1 class="letra" *ngFor="let letra of miJuego.arrayDeLetras"> {{letra}}</h1>
+  </div>
+
+   </div>
+   <br>
+
+  <input class="form-control" [(ngModel)]="ingresoUsuario" type="text" placeholder="Ingrese la palabra">
+  <br>  
+  <div class="row justify-content-md-center"> <button class="btn col-sm-8 btnVerificar " (click)="Verificar()"> Verificar </button> </div>
   
-  <button (click)="Verificar()"> Verificar </button>
 
-  <h1 *ngIf="this.miJuego.gano">  ganste</h1>
-
+  <h1 class="mensaje">  {{mensaje}}</h1>
+  
 </div>
+</div>
+

@@ -1,11 +1,41 @@
+
+@import url('https://fonts.googleapis.com/css?family=Monoton');
+
+
+@import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah');
+
+
+
+p{
+    font-family: 'Gloria Hallelujah', cursive;
+    color: oldlace;
+}
+
+h1{
+    position: sticky;
+    margin-top: 20px;
+    font-family: 'Monoton', cursive;
+    color: yellow;
+}
+
 .panel
 {
     height: 200px;
-    background-image: url("/assets/imagenes/probertson.gif");    
+    /*background-image: url("/assets/imagenes/probertson.gif");    
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;*/
+
+    background-position: center;
+    background-repeat: repeat;
+   /* background-size: cover;*/
     position: relative;
+    /*background-color: skyblue;*/
+   background-image: url("/assets/imagenes/fondo.gif");
+  /* padding-left: 400px;*/
+  padding-bottom: 5px;
+  padding-top: 2px;
 }
 
 

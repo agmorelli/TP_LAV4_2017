@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Monoton');
 h1{
+    position: sticky;
+    margin-top: 90px;
     font-family: 'Monoton', cursive;
     color: yellow;
 }
@@ -12,6 +14,7 @@ h1{
     position: relative;
     /*background-color: skyblue;*/
    background-image: url("/assets/imagenes/fondo.gif");
+  /* padding-left: 400px;*/
         
 }
 

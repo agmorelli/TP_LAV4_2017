@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css?family=Monofett');
+@import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah');
+
+.fondo{
+    background-image: url("../../assets/imagenes/fondo.gif");
+}
+.titulo{
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+.conteinerLetras{
+    position: relative;
+    margin-left: 2%;
+    text-align: center;
+    padding-bottom: 30%;
+
+}
+.letra{
+    
+    font-family: 'Monofett', cursive;
+    font-size: 500%;
+   
+    
+}
+
+.container-letras{
+    text-align: center;
+    background-color: rgba(251, 255, 0, 0.932);
+    border: solid 20px;
+    border-color: rgb(100, 201, 192);
+    margin-left: 20%;
+    margin-right: 20%;
+    width: 600px;
+    height: 200px;
+    padding-left: 2%;
+    padding: 2%;
+    
+}
+.btnVerificar{
+    font-family: 'Gloria Hallelujah', cursive;
+    background-color: rgb(83, 223, 49);
+}
+.container{
+    background-color: rgb(104, 151, 238);
+    height: 600px;
+    padding: 2%;
+}
+.btnEmpieza{
+    font-family: 'Gloria Hallelujah', cursive;
+    
+    position: relative;
+    width: 50%;
+    background-color: orange;
+    margin-left: 23%;
+
+}
+.mensaje{
+    font-family: 'Gloria Hallelujah', cursive;
+}

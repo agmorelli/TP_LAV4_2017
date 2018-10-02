@@ -55,6 +55,23 @@ verificar():boolean
     return false
 }
 
+ObtenerResultado(){
+    switch(this.operador){
+
+        case "+": this.resultado= this.numero1 + this.numero2
+        break;
+
+        case "-": this.resultado= this.numero1 - this.numero2
+        break;
+
+        case "*": this.resultado= this.numero1 * this.numero2
+        break;
+
+        case "/": this.resultado= Math.round(this.numero1 / this.numero2)
+        break;
+    }
+}
+
 IniciarTiempo(){
 let segundos=10;
 let mili=59;

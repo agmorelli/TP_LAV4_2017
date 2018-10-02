@@ -2,6 +2,7 @@ import { Juego } from './juego';
 
 export class JuegoAnagrama extends Juego {
 
+    
 listaPalabras:Array<string>;
 palabraUsada:string;
 palabraUsuario:string;
@@ -11,7 +12,7 @@ arrayDeLetras:Array<string>;
 
         super("Anagrama",false,jugador);
 
-        this.listaPalabras=new Array("ARGENTINA", "BASIL", "ALEMANIA", "COMPUTADORA", "RATON", "SILLA", "MESA", "PELOTA", "CASA", "VACA");
+        this.listaPalabras=new Array("ARGENTINA", "BRASIL", "ALEMANIA", "COMPUTADORA", "RATON", "SILLA", "MESA", "PELOTA", "CASA", "VACA");
         this.palabraUsada=this.SeleccionarPalabra();
         this.arrayDeLetras=this.DesarmarPalabra();
         console.log(this.palabraUsada);
