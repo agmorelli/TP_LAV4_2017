@@ -1,11 +1,11 @@
-
+<div class="body"> 
    
   <div class=" container">
 
 
       <div class=" row justify-content-sm-center">
         
-          <h1> Agilidad Aritmética </h1> 
+          <h1 class="titulo"> Agilidad Aritmética </h1> 
         
         </div>
 
@@ -13,7 +13,8 @@
           <button class="btn btn-danger" (click)="NuevoJuego()">iniciar Juego</button>
           <div class="col-sm-4 calculadora ">
             <div class=" row pantalla col-sm-11">
-               {{this.nuevoJuego.calculo}} = {{this.nuevoJuego.resultadoUsuario}} 
+              <h2 class="textPantalla">  {{this.nuevoJuego.calculo}} = {{this.nuevoJuego.resultadoUsuario}}   </h2>
+              
                 
             </div>
 
@@ -44,8 +45,9 @@
           </div>
 
           <div class="tiempo col-sm-2 justify-content-sm-center"><label>Tiempo:</label><br> <h1> {{this.nuevoJuego.tiempo}} </h1> </div>
+          <br>  
         
-       
+          <div class="row col-sm-4" *ngIf="this.nuevoJuego.resultadoJuego == 'gano' || this.nuevoJuego.resultadoJuego == 'perdio'" class="mensaje"><h1> {{Mensajes}}  </h1> </div>
           
         </div>
         
@@ -53,3 +55,6 @@
       
     
   </div>
+
+
+</div>

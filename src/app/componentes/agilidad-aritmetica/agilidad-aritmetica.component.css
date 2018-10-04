@@ -1,3 +1,22 @@
+
+
+@import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah');
+
+
+
+
+.body{
+  background-image: url("../../assets/imagenes/fondo.gif");
+}
+.container{
+  background-color: darkcyan;
+}
+
+.titulo{
+    font-family: 'Gloria Hallelujah', cursive;
+    color: chartreuse;
+}
+
 .calculadora{
   height: 450px;
   background-color: darkgrey;
