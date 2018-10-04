@@ -8,11 +8,14 @@ resultado:number;
 operador:string;
 tiempo:any;
 calculo:string;
-resultadoUsuario:number;
+ resultadoUsuario:any;
+ control;
+ resultadoJuego;
 
 constructor(){
     super("Agilidad aritmetica");
-    this.GenerarCalculo();
+   this.calculo= this.GenerarCalculo();
+    
 
 }
 
@@ -20,7 +23,8 @@ GenerarCalculo()
 {
     this.numero1=Math.round(Math.random()*10);
     this.numero2=Math.round(Math.random()*10);
-    let numOp =Math.round(Math.random()*4);
+    let numOp =Math.round(Math.random()*3);
+    console.log(numOp);
 
     switch(numOp)
     {
@@ -38,8 +42,13 @@ GenerarCalculo()
 
         case 3:
         this.operador= "/";
+        if(this.numero1 < this.numero2){
+            this.GenerarCalculo();
+            
+        }
         break;
     }
+    this.ObtenerResultado();
     this.IniciarTiempo();
 
     return this.numero1 +" "+ this.operador + " " +this.numero2 
@@ -47,6 +56,7 @@ GenerarCalculo()
 
 verificar():boolean
 {
+   this.DetenerTiempo();
     if(this.resultado==this.resultadoUsuario && this.tiempo != "00:00")
     {
         this.gano=true;
@@ -73,14 +83,17 @@ ObtenerResultado(){
 }
 
 IniciarTiempo(){
+let empezado=true;
 let segundos=10;
 let mili=59;
 
-    let control=setInterval(()=>{
-
+    this.control=setInterval(()=>{
+  
         if(segundos==0 && mili ==0)
         {
-            clearInterval(control);
+            this.resultadoJuego="perdio";
+            this.gano=false;
+            clearInterval(this.control);
         }
 
         mili--;
@@ -97,6 +110,11 @@ let mili=59;
         this.tiempo= segundos + " : " + mili;
     },10);
 
+}
+DetenerTiempo()
+{
+    
+   clearInterval(this.control);
 }
 
 }

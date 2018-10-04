@@ -1,31 +1,55 @@
 
-   <h1> Agilidad Aritmética </h1> 
-  
-  <div style="margin-left: 10px">
-
-  
-         
-          <button type="button" class="btn btn-warning" (click)='irA()'>Ir a todos los juegos</button>    
-          <button type="button" class="btn btn-success" [hidden]="!ocultarVerificar" (click)='NuevoJuego()'>Comenzar</button>
-         {{this.nuevoJuego.tiempo}}
-
-  
+   
+  <div class=" container">
 
 
-      <i class=txt>{{nuevoJuego.numero1}}</i>
-      <i class=txt >{{nuevoJuego.operador}}</i>
-      <i class=txt >{{nuevoJuego.numero2}}</i>
- 
-      
+      <div class=" row justify-content-sm-center">
         
-        <button (click)="verificar()">Verificar</button>
+          <h1> Agilidad Aritmética </h1> 
+        
+        </div>
 
+        <div class=" row justify-content-sm-center">
+          <button class="btn btn-danger" (click)="NuevoJuego()">iniciar Juego</button>
+          <div class="col-sm-4 calculadora ">
+            <div class=" row pantalla col-sm-11">
+               {{this.nuevoJuego.calculo}} = {{this.nuevoJuego.resultadoUsuario}} 
+                
+            </div>
 
-  
-  <div [hidden]='!nuevoJuego.verifica'>
+            <div class="row justify-content-sm-center col-sm-9">
+              <div class="botonera col-sm-11"> 
+              <table> 
+                <tr>  
+                  <td><button (click)="IngresarNumero(1)" class="btn btn-warning"> 1 </button></td> <td><button (click)="IngresarNumero(2)"  class="btn btn-warning"> 2 </button></td> <td><button (click)="IngresarNumero(3)" class="btn btn-warning"> 3 </button></td>
+                </tr>
+                  <tr>  
+                      <td><button (click)="IngresarNumero(4)"  class="btn btn-warning"> 4 </button></td> <td><button (click)="IngresarNumero(5)"  class="btn btn-warning"> 5 </button></td> <td><button (click)="IngresarNumero(6)"  class="btn btn-warning"> 6 </button></td>
+                    </tr>
+                    <tr>  
+                        <td><button (click)="IngresarNumero(7)"  class="btn btn-warning"> 7 </button></td> <td><button (click)="IngresarNumero(8)"  class="btn btn-warning"> 8 </button></td> <td><button (click)="IngresarNumero(9)"  class="btn btn-warning"> 9 </button></td>
+                      </tr>
+                      <tr>  
+                          <td><button (click)="IngresarNumero(0)"  class="btn btn-warning btno"> 0 </button></td> <td><button (click)="IngresarNumero('-')" class="btn btn-warning btnMenos"> "-" </button></td> 
+                          <td><button (click)="Verificar()"  class="btn btn-success"> Verificar </button></td> 
+                        </tr>
+                
+              </table>
+            </div>
+
+            <div *ngIf="this.nuevoJuego.resultadoJuego == 'gano' || this.nuevoJuego.resultadoJuego == 'perdio'" class="mensaje">{{Mensajes}} </div>
+            </div> 
+            
+
+          </div>
+
+          <div class="tiempo col-sm-2 justify-content-sm-center"><label>Tiempo:</label><br> <h1> {{this.nuevoJuego.tiempo}} </h1> </div>
+        
+       
+          
+        </div>
+        
+      
+      
     
-      <i class=txt>{{nuevoJuego.victoria}}</i>
-      <br><br>
-      <input readonly [(ngModel)]='nuevoJuego.calculo' class=txt type="text" style='width:60%; opacity: 50%; background-color:rgba(0, 0, 0, 0.514); text-align:center; ' >
   </div>
-  
